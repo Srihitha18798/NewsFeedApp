@@ -16,7 +16,8 @@ import com.squareup.picasso.Picasso
 import java.text.ParseException
 import java.util.*
 
-class ListNewsAdapter (val articleList:MutableList<Article>,private val context: Context):RecyclerView.Adapter<ListNewsViewHolder>() {
+class ListNewsAdapter(val articleList: MutableList<Article>, private val context: Context) :
+    RecyclerView.Adapter<ListNewsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListNewsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val itemView = inflater.inflate(R.layout.news_layout, parent, false)
@@ -50,10 +51,10 @@ class ListNewsAdapter (val articleList:MutableList<Article>,private val context:
         }
 
         //set Event Click
-        holder.setItemClickListener(object :ItemClickListener{
+        holder.setItemClickListener(object : ItemClickListener {
             override fun onClick(view: View, position: Int) {
-                val detail= Intent(context, NewsDetail::class.java)
-                detail.putExtra("webURL",articleList[position].url)
+                val detail = Intent(context, NewsDetail::class.java)
+                detail.putExtra("webURL", articleList[position].url)
                 context.startActivity(detail)
             }
 

@@ -16,8 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             app:diagonal_angle="5"
-            app:diagonal_position="bottom"
-            app:diagonal_direction="left">
+            app:diagonal_direction="left"
+            app:diagonal_position="bottom">
 
             <com.flaviofaria.kenburnsview.KenBurnsView
                 android:id="@+id/top_image"
@@ -65,7 +65,6 @@
 
 
             </RelativeLayout>
-
 
 
         </com.github.florent37.diagonallayout.DiagonalLayout>

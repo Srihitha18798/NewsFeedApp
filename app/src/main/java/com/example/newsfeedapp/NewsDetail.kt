@@ -18,21 +18,19 @@ class NewsDetail : AppCompatActivity() {
         setContentView(R.layout.activity_news_detail)
 
 
-        alertDialog= SpotsDialog.Builder().setContext(this).build()
+        alertDialog = SpotsDialog.Builder().setContext(this).build()
         alertDialog.show()
 
-        //webview
-        webView.settings.javaScriptEnabled=true
-        webView.webChromeClient= WebChromeClient()
-        webView.webViewClient=object :WebViewClient(){
+        webView.settings.javaScriptEnabled = true
+        webView.webChromeClient = WebChromeClient()
+        webView.webViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView?, url: String?) {
                 alertDialog.dismiss()
             }
 
-            // intent.getStringExtra("webURL")?.let { webView.loadUrl(it) }
         }
-        if(intent != null)
-            if(!intent.getStringExtra("webURL")?.isEmpty()!!)
+        if (intent != null)
+            if (!intent.getStringExtra("webURL")?.isEmpty()!!)
                 webView.loadUrl(intent.getStringExtra("webURL")!!)
 
     }
